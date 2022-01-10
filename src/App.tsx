@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from "react";
+import Grid from '@mui/material/Grid';
+import { Chart } from './Chart';
+import { OrderBook } from './OrderBook';
+import { TradeForm } from './TradeForm';
+import { Position } from './Position';
+import { Ticker } from './Ticker';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const App: FC = () => {
+    return (
+        <Grid container spacing={2}>
+            <Grid item xs={12}><Ticker /></Grid>
+            <Grid item xs={12} md={6}><Chart /></Grid>
+            <Grid item xs={12} md={3}><OrderBook /></Grid>
+            <Grid item xs={12} md={3}><TradeForm /></Grid>
+            <Grid item xs={12}><Position /></Grid>
+        </Grid>
+    )
+};
